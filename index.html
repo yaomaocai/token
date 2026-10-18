@@ -19,7 +19,7 @@
   .topnav a:hover{background:rgba(255,255,255,.08);color:#fff}
   .free-tag{font-size:11px;color:#a9e6b5;border:1px solid rgba(80,200,120,.5);background:rgba(80,200,120,.15);padding:4px 10px;border-radius:20px;letter-spacing:1px}
   .hero{background:linear-gradient(rgba(21,38,63,.92),rgba(15,27,45,.96)),repeating-linear-gradient(0deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),var(--navy);color:#fff;position:relative;overflow:hidden}
-  .hero-inner{max-width:1240px;margin:0 auto;padding:64px 24px 56px;position:relative;z-index:2}
+  .hero-inner{max-width:1240px;margin:0 auto;padding:64px 24px 56px;position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;letter-spacing:2px;color:var(--orange2);background:rgba(240,140,0,.12);border:1px solid rgba(240,140,0,.35);padding:6px 12px;border-radius:6px;margin-bottom:20px}
   .eyebrow::before{content:"▚";color:var(--orange2)}
   .hero h1{font-size:clamp(28px,4.6vw,48px);line-height:1.12;font-weight:800;letter-spacing:.5px;max-width:18em}
@@ -32,20 +32,24 @@
   .hero-search{max-width:640px;margin-top:30px;display:flex;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
   .hero-search input{flex:1;border:0;outline:0;padding:15px 18px;font-size:15px;font-family:var(--sans)}
   .hero-search button{border:0;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;padding:0 26px;font-size:15px;font-weight:600;cursor:pointer}
-  /* 网站介绍 */
-  .about{max-width:1240px;margin:0 auto;padding:56px 24px 40px}
-  .about-banner{background:linear-gradient(135deg,var(--navy),var(--steel)),repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 60px);color:#fff;border-radius:18px;padding:44px 40px;position:relative;overflow:hidden}
-  .about-banner::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,89,12,.25),transparent 70%)}
-  .about-name{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:2px}
-  .about-name .accent{color:var(--orange2)}
-  .about-slogan{margin-top:10px;font-size:17px;color:#ffd9a8;letter-spacing:1px;font-weight:600}
-  .about-sub{margin-top:10px;font-size:13.5px;color:#c3d2e2;max-width:56em}
-  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
-  .about-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
-  .about-item h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-  .about-item .tag{font-size:11px;background:var(--orange);color:#fff;border-radius:5px;padding:1px 8px;flex-shrink:0}
-  .about-item p{font-size:13px;color:#c3d2e2;line-height:1.7}
-  .about-adapt{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:22px}
+  /* 工域前瞻品牌卡片（hero 右侧） */
+  .hero-about{background:linear-gradient(160deg,rgba(30,58,95,.9),rgba(15,27,45,.92));border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px 28px;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .hero-about::before{content:"";position:absolute;right:-50px;top:-50px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(232,89,12,.28),transparent 70%)}
+  .ha-head{position:relative}
+  .ha-name{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:2px}
+  .ha-name span{color:var(--orange2)}
+  .ha-slogan{margin-top:8px;font-size:15px;color:#ffd9a8;font-weight:600;letter-spacing:1px}
+  .ha-sub{margin-top:10px;font-size:12.5px;color:#c3d2e2;line-height:1.7}
+  .ha-list{display:flex;flex-direction:column;gap:12px;margin-top:18px;position:relative}
+  .ha-row{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px}
+  .ha-row .ha-tag{font-size:11px;background:var(--orange);color:#fff;border-radius:5px;padding:2px 9px;flex-shrink:0;margin-top:2px}
+  .ha-row b{font-size:14px;color:#fff;display:block}
+  .ha-row p{font-size:12.5px;color:#c3d2e2;line-height:1.6;margin-top:2px}
+  .ha-adapt{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;position:relative}
+  .ha-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;text-align:center}
+  .ha-item .arr{display:block;font-size:16px}
+  .ha-item .t{display:block;font-size:11.5px;font-weight:700;color:#fff;margin-top:4px;line-height:1.4}
+  .ha-item small{display:block;font-size:10px;color:#9db4cc;margin-top:2px}
   .adapt-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
   .adapt-card .dir{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1px}
   .adapt-card h4{font-size:16px;font-weight:800;color:var(--navy);margin:6px 0 6px}
@@ -130,7 +134,7 @@
   .btn-svc{width:100%;text-align:center;padding:11px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--steel);font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px}
   .btn-svc:hover{border-color:var(--steel2);background:#f2f7fc}
   .svc-reserved{font-size:11px;color:#b45309;background:#fff7e6;border:1px solid #ffd9a8;border-radius:5px;padding:1px 7px;white-space:nowrap}
-  @media(max-width:640px){.grid{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr}.stat b{font-size:24px}.hero-inner{padding:52px 18px 48px}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr}.stat b{font-size:24px}.hero-inner{grid-template-columns:1fr;gap:28px;padding:52px 18px 48px}.ha-adapt{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -141,39 +145,34 @@
 </div></div>
 
 <section class="hero"><div class="hero-inner">
-  <div class="eyebrow">工业行业术语 · 词源释义中心</div>
-  <h1>免费浏览，<b class="accent">一键下载</b><br>工业行业 Word 词条文档</h1>
-  <p class="sub">覆盖六大行业板块，55 条工业词源全部免费在线浏览，一键下载 Word 版文档，直接编辑使用。</p>
-  <div class="hero-stats">
-    <div class="stat"><b><em>55</em></b><span>词源词条</span></div>
-    <div class="stat"><b><em>6</em></b><span>行业分类</span></div>
-    <div class="stat"><b>免费</b><span>下载 Word 版</span></div>
+  <div class="hero-left">
+    <div class="eyebrow">工业行业术语 · 词源释义中心</div>
+    <h1>免费浏览，<b class="accent">一键下载</b><br>工业行业 Word 词条文档</h1>
+    <p class="sub">覆盖六大行业板块，55 条工业词源全部免费在线浏览，一键下载 Word 版文档，直接编辑使用。</p>
+    <div class="hero-stats">
+      <div class="stat"><b><em>55</em></b><span>词源词条</span></div>
+      <div class="stat"><b><em>6</em></b><span>行业分类</span></div>
+      <div class="stat"><b>免费</b><span>下载 Word 版</span></div>
+    </div>
+    <div class="hero-search"><input id="heroQuery" type="text" placeholder="搜索术语，如：数字孪生、PLC、供应链…"><button id="heroGo">搜索</button></div>
   </div>
-  <div class="hero-search"><input id="heroQuery" type="text" placeholder="搜索术语，如：数字孪生、PLC、供应链…"><button id="heroGo">搜索</button></div>
+  <div class="hero-about">
+    <div class="ha-head">
+      <div class="ha-name">工域<span>前瞻</span></div>
+      <div class="ha-slogan">深耕工业全域，前瞻产业布局</div>
+      <div class="ha-sub">面向工厂现场、产线工艺、质量体系与锂电、半导体、重工等多个行业赛道，提供词源、规划、可研与行业调研等专业内容。</div>
+    </div>
+    <div class="ha-list">
+      <div class="ha-row"><span class="ha-tag">工域</span><div><b>工业全领域</b><p>覆盖工厂现场、产线工艺、质量体系（PFMEA/EFMEA），也涵盖锂电、半导体、重工等行业赛道。</p></div></div>
+      <div class="ha-row"><span class="ha-tag">前瞻</span><div><b>前瞻布局</b><p>产线前期规划、可研与建设报告，以及行业未来预判，为决策提供前瞻支撑。</p></div></div>
+    </div>
+    <div class="ha-adapt">
+      <div class="ha-item"><span class="arr">⬇</span><span class="t">向下 · 工厂与工艺</span><small>承载现场级内容</small></div>
+      <div class="ha-item"><span class="arr">⬆</span><span class="t">向上 · 企业与行业</span><small>支撑战略级内容</small></div>
+      <div class="ha-item"><span class="arr">🔭</span><span class="t">面向未来 · 决策者</span><small>面向工程师与决策者</small></div>
+    </div>
+  </div>
 </div></section>
-
-<section class="about" id="about" style="scroll-margin-top:70px">
-  <div class="section-head"><h2>关于工域前瞻</h2><span class="hint">网站介绍 · 品牌理念</span></div>
-  <div class="about-banner">
-    <div class="about-name">工域<span class="accent">前瞻</span></div>
-    <div class="about-slogan">深耕工业全域，前瞻产业布局</div>
-    <div class="about-sub">面向工厂现场、产线工艺、质量体系与锂电、半导体、重工等多个行业赛道，提供词源、规划、可研与行业调研等专业内容。</div>
-    <div class="about-grid">
-      <div class="about-item"><h4><span class="tag">工域</span> 工业全领域</h4>
-        <p>覆盖工厂现场、产线工艺、质量体系（PFMEA/EFMEA），也涵盖锂电、半导体、重工等多个行业赛道；“域”代表场景，小到一条产线，大到整个产业。</p></div>
-      <div class="about-item"><h4><span class="tag">前瞻</span> 前瞻布局</h4>
-        <p>一层指产线前期规划、可研与建设报告；另一层指预判行业未来发展，为决策提供前瞻性支撑。</p></div>
-    </div>
-    <div class="about-adapt">
-      <div class="adapt-card"><div class="dir">向下 · 工厂与工艺</div><h4><span class="arr">⬇</span>承载现场级内容</h4>
-        <p>支撑工厂层面 FMEA、工艺风险分析、现场管理表单、单点产线规划。</p></div>
-      <div class="adapt-card"><div class="dir">向上 · 企业与行业</div><h4><span class="arr">⬆</span>支撑战略级内容</h4>
-        <p>支撑企业级、行业级可研、产业规划与行业调研报告。</p></div>
-      <div class="adapt-card"><div class="dir">面向未来 · 决策者</div><h4><span class="arr">🔭</span>面向工程师与决策者</h4>
-        <p>面向企事业工程师、企业老板与投资方，面向未来。</p></div>
-    </div>
-  </div>
-</section>
 
 <main class="wrap">
   <div class="notice">✅ 本网站词源<b>免费下载</b>（Word 版）。点击「⬇ 下载 Word」即可直接保存文档；下方还提供 8 大专业增值服务，按需咨询。</div>
