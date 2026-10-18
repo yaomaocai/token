@@ -53,6 +53,13 @@
   .adapt-card .arr{font-size:22px;margin-right:6px}
   .wrap{max-width:1240px;margin:0 auto;padding:34px 24px 70px}
   .notice{background:#eafaf1;border:1px solid #b7e6c9;color:#1d6b3c;padding:13px 18px;border-radius:10px;font-size:13.5px;margin-bottom:24px}
+  .delivery{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:16px 20px;margin-bottom:24px}
+  .delivery-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:10px}
+  .delivery-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px 24px}
+  .delivery-list li{font-size:13px;color:var(--muted);line-height:1.7;padding-left:20px;position:relative}
+  .delivery-list li::before{content:"▸";position:absolute;left:2px;color:var(--orange);font-weight:700}
+  .delivery-list li b{color:var(--steel);font-weight:700}
+  .delivery-list li span{color:var(--orange);font-weight:700}
   .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
   .section-head h2{font-size:22px;font-weight:800;color:var(--navy)}
   .section-head h2::before{content:"// ";color:var(--orange)}
@@ -170,6 +177,15 @@
 
 <main class="wrap">
   <div class="notice">✅ 本网站词源<b>免费下载</b>（Word 版）。点击「⬇ 下载 Word」即可直接保存文档；下方还提供 8 大专业增值服务，按需咨询。</div>
+  <div class="delivery">
+    <div class="delivery-title">⏱ 交付周期说明</div>
+    <ul class="delivery-list">
+      <li><b>①</b> 已有词条生成不同文件：<span>＜1 天，最快 20 分钟</span></li>
+      <li><b>②</b> 无词条业务：双方沟通需求 <span>0.5 天</span>；完成内容＋双方确认修改 <span>0.5 天</span>，最多两天</li>
+      <li><b>③</b> 企业/行业/调研/评价/规划报告：根据双方确认需求，<span>3-7 天</span></li>
+      <li><b>④</b> 特殊要求（超出以上范围）：<span>7-10 天</span></li>
+    </ul>
+  </div>
   <div class="section-head"><h2>词源库</h2><span class="hint">全部免费浏览 · 免费下载 Word</span></div>
   <div class="cats" id="catBar"><div class="cat active" data-cat="all">全部<span class="n">55</span></div><div class="cat" data-cat="smart">智能制造<span class="n">10</span></div><div class="cat" data-cat="auto">工业自动化<span class="n">10</span></div><div class="cat" data-cat="inet">工业互联网<span class="n">10</span></div><div class="cat" data-cat="energy">新能源与新材料<span class="n">9</span></div><div class="cat" data-cat="safe">工业安全与环保<span class="n">8</span></div><div class="cat" data-cat="mgmt">工业管理与供应链<span class="n">8</span></div></div>
   <div class="searchbar"><input id="gridQuery" type="text" placeholder="在当前分类内筛选关键词…"><span class="results-count">当前显示 <b id="shownNum">55</b> 条</span></div>
