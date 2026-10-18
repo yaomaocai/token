@@ -1,0 +1,30 @@
+{
+  "port": 3000,
+  "siteTitle": "工业词源库 · 付费下载中心",
+  "siteUrl": "http://YOUR_SERVER_IP:3000",
+  "pricing": {
+    "single": 2.00,
+    "currency": "CNY"
+  },
+  "payment": {
+    "mode": "mock",
+    "alipay": {
+      "enabled": false,
+      "gateway": "https://openapi.alipay.com/gateway.do",
+      "appId": "",
+      "privateKey": "",
+      "alipayPublicKey": "",
+      "notifyUrl": "http://YOUR_DOMAIN/api/pay/alipay/notify",
+      "returnUrl": "http://YOUR_DOMAIN/pay-result.html"
+    },
+    "wechat": {
+      "enabled": false,
+      "appId": "",
+      "mchId": "",
+      "apiV3Key": "",
+      "serialNo": "",
+      "privateKeyPath": "",
+      "notifyUrl": "http://YOUR_DOMAIN/api/pay/wechat/notify"
+    }
+  }
+}
