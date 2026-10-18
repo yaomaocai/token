@@ -32,6 +32,25 @@
   .hero-search{max-width:640px;margin-top:30px;display:flex;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
   .hero-search input{flex:1;border:0;outline:0;padding:15px 18px;font-size:15px;font-family:var(--sans)}
   .hero-search button{border:0;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;padding:0 26px;font-size:15px;font-weight:600;cursor:pointer}
+  /* 网站介绍 */
+  .about{max-width:1240px;margin:0 auto;padding:56px 24px 40px}
+  .about-banner{background:linear-gradient(135deg,var(--navy),var(--steel)),repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 60px);color:#fff;border-radius:18px;padding:44px 40px;position:relative;overflow:hidden}
+  .about-banner::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(232,89,12,.25),transparent 70%)}
+  .about-name{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:2px}
+  .about-name .accent{color:var(--orange2)}
+  .about-slogan{margin-top:10px;font-size:17px;color:#ffd9a8;letter-spacing:1px;font-weight:600}
+  .about-sub{margin-top:10px;font-size:13.5px;color:#c3d2e2;max-width:56em}
+  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+  .about-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px}
+  .about-item h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .about-item .tag{font-size:11px;background:var(--orange);color:#fff;border-radius:5px;padding:1px 8px;flex-shrink:0}
+  .about-item p{font-size:13px;color:#c3d2e2;line-height:1.7}
+  .about-adapt{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:22px}
+  .adapt-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .adapt-card .dir{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:1px}
+  .adapt-card h4{font-size:16px;font-weight:800;color:var(--navy);margin:6px 0 6px}
+  .adapt-card p{font-size:13px;color:var(--muted);line-height:1.7}
+  .adapt-card .arr{font-size:22px;margin-right:6px}
   .wrap{max-width:1240px;margin:0 auto;padding:34px 24px 70px}
   .notice{background:#eafaf1;border:1px solid #b7e6c9;color:#1d6b3c;padding:13px 18px;border-radius:10px;font-size:13.5px;margin-bottom:24px}
   .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
@@ -125,6 +144,29 @@
   </div>
   <div class="hero-search"><input id="heroQuery" type="text" placeholder="搜索术语，如：数字孪生、PLC、供应链…"><button id="heroGo">搜索</button></div>
 </div></section>
+
+<section class="about" id="about" style="scroll-margin-top:70px">
+  <div class="section-head"><h2>关于工域前瞻</h2><span class="hint">网站介绍 · 品牌理念</span></div>
+  <div class="about-banner">
+    <div class="about-name">工域<span class="accent">前瞻</span></div>
+    <div class="about-slogan">深耕工业全域，前瞻产业布局</div>
+    <div class="about-sub">面向工厂现场、产线工艺、质量体系与锂电、半导体、重工等多个行业赛道，提供词源、规划、可研与行业调研等专业内容。</div>
+    <div class="about-grid">
+      <div class="about-item"><h4><span class="tag">工域</span> 工业全领域</h4>
+        <p>覆盖工厂现场、产线工艺、质量体系（PFMEA/EFMEA），也涵盖锂电、半导体、重工等多个行业赛道；“域”代表场景，小到一条产线，大到整个产业。</p></div>
+      <div class="about-item"><h4><span class="tag">前瞻</span> 前瞻布局</h4>
+        <p>一层指产线前期规划、可研与建设报告；另一层指预判行业未来发展，为决策提供前瞻性支撑。</p></div>
+    </div>
+    <div class="about-adapt">
+      <div class="adapt-card"><div class="dir">向下 · 工厂与工艺</div><h4><span class="arr">⬇</span>承载现场级内容</h4>
+        <p>支撑工厂层面 FMEA、工艺风险分析、现场管理表单、单点产线规划。</p></div>
+      <div class="adapt-card"><div class="dir">向上 · 企业与行业</div><h4><span class="arr">⬆</span>支撑战略级内容</h4>
+        <p>支撑企业级、行业级可研、产业规划与行业调研报告。</p></div>
+      <div class="adapt-card"><div class="dir">面向未来 · 决策者</div><h4><span class="arr">🔭</span>面向工程师与决策者</h4>
+        <p>面向企事业工程师、企业老板与投资方，面向未来。</p></div>
+    </div>
+  </div>
+</section>
 
 <main class="wrap">
   <div class="notice">✅ 本网站词源<b>免费下载</b>（Word 版）。点击「⬇ 下载 Word」即可直接保存文档；下方还提供 8 大专业增值服务，按需咨询。</div>
