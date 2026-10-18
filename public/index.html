@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="工业行业词源付费下载网站：免费浏览，付费下载 Word 版词条文档。">
+<title>工业词源库 · 付费下载中心</title>
+<style>
+  :root{--navy:#0f1b2d;--steel:#1e3a5f;--steel2:#2c4f7c;--blueprint:#dce9f5;--line:#c7d6e6;--orange:#e8590c;--orange2:#f08c00;--ink:#1c2733;--muted:#5b6b7b;--bg:#f4f7fa;--card:#fff;--mono:"Consolas","Menlo","Courier New",monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6}
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(15,27,45,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .topbar-inner{max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;font-size:17px;letter-spacing:.5px}
+  .brand .mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px;box-shadow:0 3px 10px rgba(232,89,12,.4)}
+  .brand small{display:block;font-weight:400;font-size:10.5px;color:#9db4cc;letter-spacing:1px}
+  .topnav{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .mode-tag{font-size:11px;color:#ffd9a8;border:1px solid rgba(240,140,0,.5);background:rgba(240,140,0,.15);padding:4px 10px;border-radius:20px;letter-spacing:1px}
+  .hero{background:linear-gradient(rgba(21,38,63,.92),rgba(15,27,45,.96)),repeating-linear-gradient(0deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero-inner{max-width:1240px;margin:0 auto;padding:64px 24px 56px;position:relative;z-index:2}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;letter-spacing:2px;color:var(--orange2);background:rgba(240,140,0,.12);border:1px solid rgba(240,140,0,.35);padding:6px 12px;border-radius:6px;margin-bottom:20px}
+  .eyebrow::before{content:"▚";color:var(--orange2)}
+  .hero h1{font-size:clamp(28px,4.6vw,48px);line-height:1.12;font-weight:800;letter-spacing:.5px;max-width:18em}
+  .hero h1 .accent{color:var(--orange2)}
+  .hero .sub{max-width:46em;margin-top:16px;color:#c3d2e2;font-size:15.5px}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:30px}
+  .stat b{display:block;font-size:28px;font-weight:800;color:#fff;font-family:var(--mono)}
+  .stat b em{color:var(--orange2);font-style:normal}
+  .stat span{font-size:13px;color:#9db4cc;letter-spacing:1px}
+  .hero-search{max-width:640px;margin-top:30px;display:flex;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .hero-search input{flex:1;border:0;outline:0;padding:15px 18px;font-size:15px;font-family:var(--sans)}
+  .hero-search button{border:0;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;padding:0 26px;font-size:15px;font-weight:600;cursor:pointer}
+  .wrap{max-width:1240px;margin:0 auto;padding:34px 24px 70px}
+  .notice{background:#fff8ec;border:1px solid #ffd9a8;color:#7a4a00;padding:13px 18px;border-radius:10px;font-size:13.5px;margin-bottom:24px}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .section-head h2{font-size:22px;font-weight:800;color:var(--navy)}
+  .section-head h2::before{content:"// ";color:var(--orange)}
+  .section-head .hint{font-size:13px;color:var(--muted)}
+  .cats{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+  .cat{font-size:13.5px;padding:8px 15px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:.18s;display:flex;align-items:center;gap:7px}
+  .cat .n{font-family:var(--mono);font-size:11px;background:#eef3f8;color:var(--steel);border-radius:10px;padding:1px 8px}
+  .cat:hover{border-color:var(--steel2);color:var(--steel)}
+  .cat.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .cat.active .n{background:rgba(255,255,255,.18);color:#fff}
+  .searchbar{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap;align-items:center}
+  .searchbar input{flex:1;min-width:220px;border:1px solid var(--line);border-radius:8px;padding:11px 15px;font-size:14px;outline:0;font-family:var(--sans);background:#fff}
+  .results-count{font-size:13px;color:var(--muted)}
+  .results-count b{color:var(--orange);font-family:var(--mono)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.22s;position:relative}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(30,58,95,.14);border-color:var(--steel2)}
+  .card .bar{height:5px;width:100%}
+  .card-body{padding:20px 20px 16px;flex:1;display:flex;flex-direction:column}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .card h3{font-size:18px;font-weight:800;color:var(--navy)}
+  .card .en{font-family:var(--mono);font-size:12px;color:var(--steel2);margin-bottom:10px}
+  .badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+  .price{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:8px}
+  .price .free{color:#4d7c0f}
+  .card .excerpt{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .card-foot{margin-top:auto;display:flex;gap:8px}
+  .card-foot .btn{flex:1;text-align:center;font-size:13.5px;padding:10px 8px;border-radius:8px;font-weight:600;cursor:pointer;border:1px solid;transition:.18s;font-family:var(--sans)}
+  .btn-dl{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent!important;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
+  .btn-dl:hover{filter:brightness(1.08)}
+  .btn-dl.own{background:linear-gradient(135deg,#2f9e44,#51cf66);border-color:transparent!important}
+  .btn-detail{background:#fff;border-color:var(--line)!important;color:var(--steel)}
+  .btn-detail:hover{border-color:var(--steel2)!important;background:#f2f7fc}
+  .empty{text-align:center;padding:60px 20px;color:var(--muted)}
+  .empty .big{font-size:44px;margin-bottom:10px}
+  .modal{position:fixed;inset:0;background:rgba(15,27,45,.6);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+  .modal.open{display:flex}
+  .modal-box{background:#fff;border-radius:16px;max-width:520px;width:100%;max-height:92vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .pay-head{padding:24px 28px 18px;color:#fff;position:relative;background:linear-gradient(150deg,var(--navy),var(--steel))}
+  .pay-head .close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.15);border:0;color:#fff;width:32px;height:32px;border-radius:50%;font-size:19px;cursor:pointer;line-height:1}
+  .pay-head h3{font-size:20px;font-weight:800}
+  .pay-head .sub{font-size:13px;color:#c3d2e2;margin-top:3px}
+  .pay-body{padding:22px 28px 26px}
+  .pay-price{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+  .pay-price .cur{font-size:15px;color:var(--orange);font-weight:700}
+  .pay-price .amt{font-size:34px;font-weight:800;color:var(--orange);font-family:var(--mono)}
+  .channels{display:flex;gap:10px;margin-bottom:18px}
+  .channel{flex:1;border:2px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center;cursor:pointer;transition:.18s;background:#fff}
+  .channel.sel{border-color:var(--orange);background:#fff6ef}
+  .channel .ico{font-size:26px;display:block;margin-bottom:6px}
+  .channel .nm{font-size:13px;font-weight:600}
+  .pay-qr{text-align:center;padding:14px;border:1px dashed var(--line);border-radius:10px;background:#fafcfe;margin-bottom:16px}
+  .pay-qr .qcode{font-family:var(--mono);font-size:12px;color:var(--muted);word-break:break-all;margin-top:8px}
+  .pay-actions .btn{width:100%;text-align:center;padding:13px;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer;border:1px solid;font-family:var(--sans)}
+  .pay-mock{background:linear-gradient(135deg,#2f9e44,#51cf66);border-color:transparent!important;color:#fff}
+  .pay-submit{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent!important;color:#fff}
+  .pay-status{text-align:center;padding:30px 10px}
+  .pay-status .ok{font-size:52px;color:#2f9e44}
+  .pay-status .txt{font-size:16px;font-weight:700;margin:12px 0 6px}
+  .pay-status .tip{font-size:13px;color:var(--muted)}
+  .pay-status .btn{margin-top:18px;display:inline-block;padding:12px 26px;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer;border:0;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;font-family:var(--sans)}
+  .loading{text-align:center;padding:60px;color:var(--muted)}
+  .spin{display:inline-block;width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--orange);border-radius:50%;animation:sp .8s linear infinite;margin-bottom:12px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  footer{background:var(--navy);color:#9db4cc;padding:40px 24px;text-align:center;font-size:13px}
+  footer .f-title{color:#fff;font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+  footer .f-title .dot{color:var(--orange2)}
+  /* 增值服务 */
+  .topnav a{color:#c9d8e8;font-size:13.5px;padding:7px 12px;border-radius:7px;text-decoration:none;transition:.2s}
+  .topnav a:hover{background:rgba(255,255,255,.08);color:#fff}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:4px}
+  .svc-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.22s;position:relative}
+  .svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(30,58,95,.14);border-color:var(--steel2)}
+  .svc-card .bar{height:5px;width:100%}
+  .svc-body{padding:20px;flex:1;display:flex;flex-direction:column}
+  .svc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .svc-ico{width:44px;height:44px;border-radius:10px;background:#eef3f8;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .svc-head h3{font-size:16.5px;font-weight:800;color:var(--navy);margin-bottom:1px}
+  .svc-head .cat{font-size:11px;color:var(--steel);background:#eef3f8;border-radius:5px;padding:2px 8px}
+  .svc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px}
+  .svc-plan{list-style:none;margin-bottom:14px}
+  .svc-plan li{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .svc-plan li:last-child{border-bottom:0}
+  .svc-plan .lab{color:var(--ink)}
+  .svc-plan .pri{color:var(--orange);font-weight:700;font-family:var(--mono);white-space:nowrap}
+  .svc-foot{margin-top:auto}
+  .btn-svc{width:100%;text-align:center;padding:11px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--steel);font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px}
+  .btn-svc:hover{border-color:var(--steel2);background:#f2f7fc}
+  .svc-reserved{font-size:11px;color:#b45309;background:#fff7e6;border:1px solid #ffd9a8;border-radius:5px;padding:1px 7px;white-space:nowrap}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}.svc-grid{grid-template-columns:1fr}.stat b{font-size:24px}.hero-inner{padding:52px 18px 48px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand"><div class="mark">工</div><div>工业词源库<small>PAID WORD DOWNLOAD</small></div></div>
+  <nav class="topnav"><a href="#services">增值服务</a><span class="mode-tag" id="modeTag">加载中…</span></nav>
+</div></div>
+
+<section class="hero"><div class="hero-inner">
+  <div class="eyebrow">工业行业术语 · 词源释义中心</div>
+  <h1>免费浏览，<b class="accent">付费下载</b><br>工业行业 Word 词条文档</h1>
+  <p class="sub" id="heroSub">覆盖六大行业板块，全部词源可免费在线浏览；下载 Word 版需支付少量费用，支付成功即可下载。</p>
+  <div class="hero-stats">
+    <div class="stat"><b><em id="statTerms">0</em></b><span>词源词条</span></div>
+    <div class="stat"><b><em id="statCats">0</em></b><span>行业分类</span></div>
+    <div class="stat"><b id="statPrice">¥--</b><span>单条下载价</span></div>
+  </div>
+  <div class="hero-search"><input id="heroQuery" type="text" placeholder="搜索术语，如：数字孪生、PLC、供应链…"><button id="heroGo">搜索</button></div>
+</div></section>
+
+<main class="wrap">
+  <div class="notice" id="notice" style="display:none"></div>
+  <div class="section-head"><h2>词源库</h2><span class="hint">全部免费浏览 · 下载需支付</span></div>
+  <div class="cats" id="catBar"></div>
+  <div class="searchbar"><input id="gridQuery" type="text" placeholder="在当前分类内筛选关键词…"><span class="results-count">当前显示 <b id="shownNum">0</b> 条</span></div>
+  <div class="grid" id="grid"><div class="loading" style="grid-column:1/-1"><div class="spin"></div><div>正在加载词源…</div></div></div>
+  <div class="empty" id="empty" style="display:none"><div class="big">🔍</div><div>未找到匹配的词源，换个关键词试试。</div></div>
+</main>
+
+<section class="wrap" id="services" style="scroll-margin-top:70px">
+  <div class="section-head"><h2>增值服务</h2><span class="hint">专业定制 · 预约咨询（在线支付功能预留，暂未开放）</span></div>
+  <div class="svc-grid" id="svcGrid"></div>
+  <div class="notice" style="display:block;margin-top:22px">💡 <b>说明：</b>以下为增值服务模块，价格已标注。当前<b>在线支付功能暂未开放（按钮为预留）</b>，如需使用请通过「预约咨询」联系客服。接入支付后即可在线下单。</div>
+</section>
+
+<footer>
+  <div class="f-title">工业词源库 <span class="dot">·</span> 付费下载中心</div>
+  <p>六大行业板块 · 免费浏览 · 付费下载 Word</p>
+</footer>
+
+<!-- 增值服务预约/咨询弹窗 -->
+<div class="modal" id="svcModal">
+  <div class="modal-box">
+    <div class="pay-head">
+      <button class="close" id="svcClose">&times;</button>
+      <h3 id="svcTitle">服务详情</h3>
+      <div class="sub" id="svcSub"></div>
+    </div>
+    <div class="pay-body" id="svcBody"></div>
+  </div>
+</div>
+
+<!-- 购买/支付弹窗 -->
+<div class="modal" id="payModal">
+  <div class="modal-box">
+    <div class="pay-head">
+      <button class="close" id="payClose">&times;</button>
+      <h3 id="payTitle">购买词源</h3>
+      <div class="sub" id="paySub"></div>
+    </div>
+    <div class="pay-body" id="payBody"></div>
+  </div>
+</div>
+
+<script>
+/* ============ 全局状态 ============ */
+let CONFIG = null;
+let TERMS = [];
+let CATS = [];
+let currentCat = "all";
+let keyword = "";
+let currentTerm = null;
+let pollTimer = null;
+
+const $ = (id) => document.getElementById(id);
+const catName = (id) => (CATS.find(c=>c.id===id)||{}).name || "";
+const catColor = (id) => (CATS.find(c=>c.id===id)||{}).color || "#888";
+
+/* ============ 初始化 ============ */
+async function init(){
+  try{
+    const [cfg, data] = await Promise.all([
+      fetch("/api/config").then(r=>r.json()),
+      fetch("/api/terms").then(r=>r.json())
+    ]);
+    CONFIG = cfg; TERMS = data.terms; CATS = data.categories;
+    $("statTerms").textContent = TERMS.length;
+    $("statCats").textContent = CATS.length;
+    $("statPrice").textContent = "¥" + (Number(cfg.pricing.single)||0).toFixed(2);
+    const mode = cfg.paymentMode;
+    $("modeTag").textContent = mode==="mock" ? "模拟支付模式" : (mode==="alipay" ? "支付宝支付" : "微信支付");
+    if(mode==="mock"){
+      $("notice").style.display="block";
+      $("notice").innerHTML="当前为 <b>模拟支付模式</b>（尚未接入真实支付）。点击「下载」→「模拟支付」即可完成全流程演示；接入支付宝/微信后自动切换为真实收款。";
+    }
+    renderCats(); renderGrid(); renderServices();
+  }catch(e){
+    $("grid").innerHTML = `<div class="empty" style="display:block"><div class="big">⚠️</div><div>无法连接后端服务，请确认后端已启动（node server.js）。</div></div>`;
+  }
+}
+
+/* ============ 渲染 ============ */
+function renderCats(){
+  $("catBar").innerHTML = `<div class="cat ${currentCat==='all'?'active':''}" data-cat="all">全部<span class="n">${TERMS.length}</span></div>` +
+    CATS.map(c=>{ const n=TERMS.filter(t=>t.cat===c.id).length; return `<div class="cat ${currentCat===c.id?'active':''}" data-cat="${c.id}">${c.name}<span class="n">${n}</span></div>`; }).join("");
+  document.querySelectorAll("#catBar .cat").forEach(el=>{ el.onclick=()=>{ currentCat=el.dataset.cat; renderCats(); renderGrid(); }; });
+}
+function filtered(){
+  let list = TERMS;
+  if(currentCat!=="all") list=list.filter(t=>t.cat===currentCat);
+  if(keyword){ const k=keyword.toLowerCase(); list=list.filter(t=>t.name.toLowerCase().includes(k)||t.en.toLowerCase().includes(k)||(t.kw||[]).some(x=>x.toLowerCase().includes(k))); }
+  return list;
+}
+function renderGrid(){
+  const list = filtered();
+  if(!list.length){ $("grid").innerHTML=""; $("empty").style.display="block"; }
+  else{
+    $("empty").style.display="none";
+    $("grid").innerHTML = list.map(t=>{
+      const price = Number(CONFIG.pricing.single)||0;
+      const priceHtml = `<div class="price ${price===0?'free':''}">${price===0?'免费下载':'¥'+price.toFixed(2)+' / 条'}</div>`;
+      return `<article class="card">
+        <div class="bar" style="background:${catColor(t.cat)}"></div>
+        <div class="card-body">
+          <div class="card-top"><h3>${t.name}</h3><span class="badge" style="background:${catColor(t.cat)}1a;color:${catColor(t.cat)}">${catName(t.cat)}</span></div>
+          <div class="en">${t.en}</div>${priceHtml}
+          <p class="excerpt">${t.def}</p>
+          <div class="card-foot">
+            <button class="btn btn-dl" onclick="buy('${t.id}')">⬇ 下载 Word</button>
+            <button class="btn btn-detail" onclick="detail('${t.id}')">查看</button>
+          </div>
+        </div></article>`;
+    }).join("");
+  }
+  $("shownNum").textContent = list.length;
+}
+
+/* ============ 详情 ============ */
+function detail(id){
+  const t = TERMS.find(x=>x.id===id);
+  if(!t) return;
+  currentTerm = t;
+  const price = Number(CONFIG.pricing.single)||0;
+  $("payTitle").textContent = t.name;
+  $("paySub").textContent = t.en + " · " + catName(t.cat);
+  $("payBody").innerHTML = `
+    <div class="pay-price"><span class="cur">¥</span><span class="amt">${price.toFixed(2)}</span><span>/ 单条 Word 文档</span></div>
+    <div style="font-size:13px;color:var(--muted);background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:16px">
+      专业定义、词源由来、应用场景三大板块，规范排版，Word/WPS 直接可编辑。
+    </div>
+    <div class="pay-actions"><button class="btn pay-submit" onclick="buy('${t.id}')">购买并下载</button>
+    <button class="btn btn-detail" style="width:100%;margin-top:10px" onclick="closePay()">仅浏览</button></div>`;
+  openPay();
+}
+
+/* ============ 下单支付 ============ */
+async function buy(id){
+  const t = TERMS.find(x=>x.id===id); if(!t) return;
+  currentTerm = t;
+  const price = Number(CONFIG.pricing.single)||0;
+  $("payTitle").textContent = t.name;
+  $("paySub").textContent = "确认支付 " + price.toFixed(2) + " 元下载 Word 文档";
+  $("payBody").innerHTML = `<div class="loading"><div class="spin"></div><div>正在创建订单…</div></div>`;
+  openPay();
+  try{
+    const res = await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({termId:id, channel:CONFIG.paymentMode})});
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error||"下单失败");
+    renderPay(data);
+  }catch(e){ $("payBody").innerHTML = `<div class="empty" style="display:block"><div class="big">⚠️</div><div>${e.message}</div></div>`; }
+}
+
+function renderPay(data){
+  const pay = data.payInfo; const order = data.order;
+  if(pay.channel==="mock"){
+    $("payBody").innerHTML = `
+      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span>订单号 ${order.orderNo}</span></div>
+      <div class="pay-qr"><div style="font-size:15px;font-weight:700;color:#2f9e44">🧪 模拟支付</div><div style="font-size:13px;color:var(--muted);margin-top:6px">${pay.message||""}</div></div>
+      <div class="pay-actions"><button class="btn pay-mock" onclick="mockPay('${order.orderNo}')">✅ 模拟支付成功</button></div>`;
+  }else if(pay.channel==="alipay"){
+    // 支付宝：构造自动提交表单
+    const form = document.createElement("form");
+    form.method="POST"; form.action=pay.gateway; form.style.display="none";
+    for(const k in pay.formParams){ const inp=document.createElement("input"); inp.name=k; inp.value=pay.formParams[k]; form.appendChild(inp); }
+    document.body.appendChild(form);
+    $("payBody").innerHTML = `<div class="pay-qr"><div style="font-size:15px;font-weight:700">正在跳转支付宝…</div><div style="font-size:13px;color:var(--muted);margin-top:6px">订单号 ${order.orderNo}</div></div>`;
+    form.submit();
+  }else if(pay.channel==="wechat"){
+    $("payBody").innerHTML = `
+      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span>订单号 ${order.orderNo}</span></div>
+      <div class="pay-qr"><div style="font-size:15px;font-weight:700">请用微信扫码支付</div><div class="qcode">${(pay.response&&pay.response.code_url)||"（接入微信支付后显示二维码）"}</div></div>`;
+  }
+  // 轮询支付状态
+  pollTimer = setInterval(()=>checkOrder(order.orderNo), 1500);
+  // 5 分钟超时
+  setTimeout(()=>{ if(pollTimer){ clearInterval(pollTimer); pollTimer=null; } }, 5*60*1000);
+}
+
+async function checkOrder(orderNo){
+  try{
+    const r = await fetch("/api/orders/"+orderNo);
+    const d = await r.json();
+    if(d.status==="paid"){
+      clearInterval(pollTimer); pollTimer=null;
+      $("payBody").innerHTML = `
+        <div class="pay-status"><div class="ok">✔</div><div class="txt">支付成功！</div>
+        <div class="tip">${d.termName} 的 Word 文档已解锁</div>
+        <button class="btn" onclick="doDownload('${d.termId}')">⬇ 立即下载 Word</button></div>`;
+    }
+  }catch(e){}
+}
+
+async function mockPay(orderNo){
+  try{
+    const r = await fetch("/api/pay/mock/success",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({orderNo})});
+    const d = await r.json();
+    if(d.ok){ if(pollTimer){clearInterval(pollTimer);pollTimer=null;} $("payBody").innerHTML = `
+      <div class="pay-status"><div class="ok">✔</div><div class="txt">支付成功！</div>
+      <div class="tip">${currentTerm.name} 的 Word 文档已解锁</div>
+      <button class="btn" onclick="doDownload('${currentTerm.id}')">⬇ 立即下载 Word</button></div>`; }
+    else alert(d.error||"支付失败");
+  }catch(e){ alert("支付失败"); }
+}
+
+/* ============ 下载 ============ */
+function doDownload(termId){
+  window.location.href = "/api/download/"+termId;
+  setTimeout(()=>closePay(), 800);
+}
+
+/* ============ 弹窗控制 ============ */
+function openPay(){ $("payModal").classList.add("open"); }
+function closePay(){ $("payModal").classList.remove("open"); if(pollTimer){clearInterval(pollTimer);pollTimer=null;} }
+$("payClose").onclick = closePay;
+$("payModal").addEventListener("click", e=>{ if(e.target===$("payModal")) closePay(); });
+
+/* ============ 增值服务 ============ */
+const SERVICES = [
+  { id:"efmea", cat:"FMEA", name:"设备 E-FMEA", icon:"🔧",
+    desc:"针对工厂设备的失效模式与影响分析（FMEA），识别设备潜在失效风险并制定预防与改进措施。",
+    plan:[{label:"AI 智能体生成词条",price:"5 元/条"},{label:"完整制作直接发送使用",price:"15 元/份"},{label:"信息不全需修改",price:"0.5 元/修改点"}]},
+  { id:"pfmea", cat:"FMEA", name:"过程 P-FMEA", icon:"⚙️",
+    desc:"针对生产过程的失效模式与影响分析，优化制造流程、降低质量风险、提升过程稳定性。",
+    plan:[{label:"AI 智能体生成词条",price:"8 元/条"},{label:"完整制作直接发送使用",price:"20 元/份"},{label:"信息不全需修改",price:"0.5 元/修改点"}]},
+  { id:"mgmt-table", cat:"管理表", name:"设备/工序管理表", icon:"📋",
+    desc:"单台设备或某道生产工序的管理表制作，规范现场管理与点检记录。",
+    plan:[{label:"单个设备/工序管理表",price:"2 元/个"}]},
+  { id:"biz-report", cat:"报告", name:"个人/公司业务报告", icon:"📊",
+    desc:"个人或公司业务报告编制。需提供具体要求与素材，素材充分时通过网络沟通确认。",
+    plan:[{label:"每份",price:"20 元/份"}]},
+  { id:"plan-report", cat:"报告", name:"公司级规划报告", icon:"🏢",
+    desc:"公司级战略/发展规划报告编制。需充分沟通需求方向后制作。",
+    plan:[{label:"每份",price:"40 元/份"}]},
+  { id:"industry-report", cat:"报告", name:"行业及形势分析报告", icon:"📈",
+    desc:"行业现状、市场形势与趋势分析报告，辅助经营与投资决策。",
+    plan:[{label:"每份",price:"50 元/份"}]},
+  { id:"plant-report", cat:"报告", name:"建厂/行业规划报告", icon:"🏭",
+    desc:"建厂及行业规划报告（含投资分析）。可免费修改 2 次，2 次以上每次 5 元。",
+    plan:[{label:"每份（含投资分析）",price:"100 元/份"},{label:"免费修改",price:"2 次"},{label:"超出修改",price:"5 元/次"}]},
+  { id:"courseware", cat:"课件", name:"教育课件整理编制", icon:"🎓",
+    desc:"各学科/专业教育课件的整理与编制，适用于培训与教学场景。",
+    plan:[{label:"每份",price:"15 元/份"}]}
+];
+function renderServices(){
+  const colors=["#e8590c","#2c4f7c","#0f766e","#b45309","#4d7c0f","#9333ea","#c2255c","#1971c2"];
+  $("svcGrid").innerHTML = SERVICES.map((s,i)=>{
+    const c = colors[i%colors.length];
+    const plan = s.plan.map(p=>`<li><span class="lab">${p.label}</span><span class="pri">${p.price}</span></li>`).join("");
+    return `<article class="svc-card">
+      <div class="bar" style="background:${c}"></div>
+      <div class="svc-body">
+        <div class="svc-head"><div class="svc-ico">${s.icon}</div><div><h3>${s.name}</h3><span class="cat">${s.cat}</span></div></div>
+        <p class="svc-desc">${s.desc}</p>
+        <ul class="svc-plan">${plan}</ul>
+        <div class="svc-foot"><button class="btn-svc" onclick="openSvc(${i})">📝 预约咨询<span class="svc-reserved">预留</span></button></div>
+      </div></article>`;
+  }).join("");
+}
+function openSvc(i){
+  const s = SERVICES[i];
+  $("svcTitle").textContent = s.name + " · " + s.cat;
+  $("svcSub").textContent = "增值服务 · 预约咨询";
+  const plan = s.plan.map(p=>`<li style="display:flex;justify-content:space-between;font-size:13.5px;padding:8px 0;border-bottom:1px dashed var(--line)"><span>${p.label}</span><b style="color:var(--orange)">${p.price}</b></li>`).join("");
+  $("svcBody").innerHTML = `
+    <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:14px">${s.desc}</div>
+    <ul style="list-style:none;margin-bottom:14px">${plan}</ul>
+    <div class="notice" style="display:block;margin-bottom:16px">🔒 该服务的<b>在线支付功能暂未开放（按钮为预留）</b>。如需使用，请联系客服沟通需求后人工安排。</div>
+    <div class="pay-actions"><button class="btn pay-submit" onclick="svcContact()">📞 联系客服咨询</button>
+    <button class="btn btn-detail" style="width:100%;margin-top:10px" onclick="closeSvc()">关闭</button></div>`;
+  $("svcModal").classList.add("open");
+}
+function svcContact(){
+  alert("在线支付功能预留中，暂未开放。\n\n如需使用该服务，请联系客服：\n（请在后台配置您的客服联系方式）");
+}
+function closeSvc(){ $("svcModal").classList.remove("open"); }
+$("svcClose").onclick = closeSvc;
+$("svcModal").addEventListener("click", e=>{ if(e.target===$("svcModal")) closeSvc(); });
+
+/* ============ 搜索 ============ */
+$("gridQuery").addEventListener("input", e=>{ keyword=e.target.value.trim(); renderGrid(); });
+$("heroQuery").addEventListener("keydown", e=>{ if(e.key==="Enter"){ keyword=e.target.value.trim(); renderCats(); renderGrid(); } });
+$("heroGo").onclick = ()=>{ keyword=$("heroQuery").value.trim(); renderCats(); renderGrid(); };
+
+init();
+</script>
+</body>
+</html>
