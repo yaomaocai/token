@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="工业行业词源付费下载网站：免费浏览，付费下载 Word 版词条文档。">
+<meta name="description" content="工业行业词源下载网站：免费浏览工业术语词条，付费下载 Word 版文档；并提供 FMEA、报告、课件等 8 大增值服务。">
 <title>工业词源库 · 付费下载中心</title>
 <style>
   :root{--navy:#0f1b2d;--steel:#1e3a5f;--steel2:#2c4f7c;--blueprint:#dce9f5;--line:#c7d6e6;--orange:#e8590c;--orange2:#f08c00;--ink:#1c2733;--muted:#5b6b7b;--bg:#f4f7fa;--card:#fff;--mono:"Consolas","Menlo","Courier New",monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif}
@@ -15,6 +15,8 @@
   .brand .mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--orange),var(--orange2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px;box-shadow:0 3px 10px rgba(232,89,12,.4)}
   .brand small{display:block;font-weight:400;font-size:10.5px;color:#9db4cc;letter-spacing:1px}
   .topnav{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .topnav a{color:#c9d8e8;font-size:13.5px;padding:7px 12px;border-radius:7px;text-decoration:none;transition:.2s}
+  .topnav a:hover{background:rgba(255,255,255,.08);color:#fff}
   .mode-tag{font-size:11px;color:#ffd9a8;border:1px solid rgba(240,140,0,.5);background:rgba(240,140,0,.15);padding:4px 10px;border-radius:20px;letter-spacing:1px}
   .hero{background:linear-gradient(rgba(21,38,63,.92),rgba(15,27,45,.96)),repeating-linear-gradient(0deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(220,233,245,.06) 38px 39px),var(--navy);color:#fff;position:relative;overflow:hidden}
   .hero-inner{max-width:1240px;margin:0 auto;padding:64px 24px 56px;position:relative;z-index:2}
@@ -62,7 +64,6 @@
   .card-foot .btn{flex:1;text-align:center;font-size:13.5px;padding:10px 8px;border-radius:8px;font-weight:600;cursor:pointer;border:1px solid;transition:.18s;font-family:var(--sans)}
   .btn-dl{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent!important;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
   .btn-dl:hover{filter:brightness(1.08)}
-  .btn-dl.own{background:linear-gradient(135deg,#2f9e44,#51cf66);border-color:transparent!important}
   .btn-detail{background:#fff;border-color:var(--line)!important;color:var(--steel)}
   .btn-detail:hover{border-color:var(--steel2)!important;background:#f2f7fc}
   .empty{text-align:center;padding:60px 20px;color:var(--muted)}
@@ -75,9 +76,11 @@
   .pay-head h3{font-size:20px;font-weight:800}
   .pay-head .sub{font-size:13px;color:#c3d2e2;margin-top:3px}
   .pay-body{padding:22px 28px 26px}
-  .pay-price{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+  .pay-price{display:flex;align-items:baseline;gap:8px;margin-bottom:16px;flex-wrap:wrap}
   .pay-price .cur{font-size:15px;color:var(--orange);font-weight:700}
   .pay-price .amt{font-size:34px;font-weight:800;color:var(--orange);font-family:var(--mono)}
+  .pay-price .unit{font-size:13px;color:var(--muted)}
+  .pay-price .orderno{font-size:12px;color:var(--muted);font-family:var(--mono);margin-left:auto}
   .channels{display:flex;gap:10px;margin-bottom:18px}
   .channel{flex:1;border:2px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center;cursor:pointer;transition:.18s;background:#fff}
   .channel.sel{border-color:var(--orange);background:#fff6ef}
@@ -100,8 +103,6 @@
   footer .f-title{color:#fff;font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
   footer .f-title .dot{color:var(--orange2)}
   /* 增值服务 */
-  .topnav a{color:#c9d8e8;font-size:13.5px;padding:7px 12px;border-radius:7px;text-decoration:none;transition:.2s}
-  .topnav a:hover{background:rgba(255,255,255,.08);color:#fff}
   .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:4px}
   .svc-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:.22s;position:relative}
   .svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(30,58,95,.14);border-color:var(--steel2)}
@@ -153,14 +154,14 @@
 </main>
 
 <section class="wrap" id="services" style="scroll-margin-top:70px">
-  <div class="section-head"><h2>增值服务</h2><span class="hint">专业定制 · 预约咨询（在线支付功能预留，暂未开放）</span></div>
+  <div class="section-head"><h2>增值服务</h2><span class="hint">8 大专业定制服务 · 明码标价</span></div>
   <div class="svc-grid" id="svcGrid"></div>
-  <div class="notice" style="display:block;margin-top:22px">💡 <b>说明：</b>以下为增值服务模块，价格已标注。当前<b>在线支付功能暂未开放（按钮为预留）</b>，如需使用请通过「预约咨询」联系客服。接入支付后即可在线下单。</div>
+  <div class="notice" style="display:block;margin-top:22px">💡 <b>说明：</b>以下 8 大增值服务价格已明码标注。当前<b>在线支付功能暂未开放（按钮为预留）</b>，如需使用请通过「预约咨询」联系客服沟通需求；接入支付后即可在线下单。</div>
 </section>
 
 <footer>
   <div class="f-title">工业词源库 <span class="dot">·</span> 付费下载中心</div>
-  <p>六大行业板块 · 免费浏览 · 付费下载 Word</p>
+  <p>六大行业板块 · 免费浏览 · 付费下载 Word · 8 大增值服务</p>
 </footer>
 
 <!-- 增值服务预约/咨询弹窗 -->
@@ -269,7 +270,7 @@ function detail(id){
   $("payTitle").textContent = t.name;
   $("paySub").textContent = t.en + " · " + catName(t.cat);
   $("payBody").innerHTML = `
-    <div class="pay-price"><span class="cur">¥</span><span class="amt">${price.toFixed(2)}</span><span>/ 单条 Word 文档</span></div>
+    <div class="pay-price"><span class="cur">¥</span><span class="amt">${price.toFixed(2)}</span><span class="unit">/ 单条 Word 文档</span></div>
     <div style="font-size:13px;color:var(--muted);background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:16px">
       专业定义、词源由来、应用场景三大板块，规范排版，Word/WPS 直接可编辑。
     </div>
@@ -299,11 +300,10 @@ function renderPay(data){
   const pay = data.payInfo; const order = data.order;
   if(pay.channel==="mock"){
     $("payBody").innerHTML = `
-      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span>订单号 ${order.orderNo}</span></div>
+      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span class="unit">元</span><span class="orderno">订单号 ${order.orderNo}</span></div>
       <div class="pay-qr"><div style="font-size:15px;font-weight:700;color:#2f9e44">🧪 模拟支付</div><div style="font-size:13px;color:var(--muted);margin-top:6px">${pay.message||""}</div></div>
       <div class="pay-actions"><button class="btn pay-mock" onclick="mockPay('${order.orderNo}')">✅ 模拟支付成功</button></div>`;
   }else if(pay.channel==="alipay"){
-    // 支付宝：构造自动提交表单
     const form = document.createElement("form");
     form.method="POST"; form.action=pay.gateway; form.style.display="none";
     for(const k in pay.formParams){ const inp=document.createElement("input"); inp.name=k; inp.value=pay.formParams[k]; form.appendChild(inp); }
@@ -312,12 +312,10 @@ function renderPay(data){
     form.submit();
   }else if(pay.channel==="wechat"){
     $("payBody").innerHTML = `
-      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span>订单号 ${order.orderNo}</span></div>
+      <div class="pay-price"><span class="cur">¥</span><span class="amt">${(Number(pay.amount)||0).toFixed(2)}</span><span class="unit">元</span><span class="orderno">订单号 ${order.orderNo}</span></div>
       <div class="pay-qr"><div style="font-size:15px;font-weight:700">请用微信扫码支付</div><div class="qcode">${(pay.response&&pay.response.code_url)||"（接入微信支付后显示二维码）"}</div></div>`;
   }
-  // 轮询支付状态
   pollTimer = setInterval(()=>checkOrder(order.orderNo), 1500);
-  // 5 分钟超时
   setTimeout(()=>{ if(pollTimer){ clearInterval(pollTimer); pollTimer=null; } }, 5*60*1000);
 }
 
@@ -359,7 +357,7 @@ function closePay(){ $("payModal").classList.remove("open"); if(pollTimer){clear
 $("payClose").onclick = closePay;
 $("payModal").addEventListener("click", e=>{ if(e.target===$("payModal")) closePay(); });
 
-/* ============ 增值服务 ============ */
+/* ============ 增值服务（8 大模块） ============ */
 const SERVICES = [
   { id:"efmea", cat:"FMEA", name:"设备 E-FMEA", icon:"🔧",
     desc:"针对工厂设备的失效模式与影响分析（FMEA），识别设备潜在失效风险并制定预防与改进措施。",
@@ -372,10 +370,10 @@ const SERVICES = [
     plan:[{label:"单个设备/工序管理表",price:"2 元/个"}]},
   { id:"biz-report", cat:"报告", name:"个人/公司业务报告", icon:"📊",
     desc:"个人或公司业务报告编制。需提供具体要求与素材，素材充分时通过网络沟通确认。",
-    plan:[{label:"每份",price:"20 元/份"}]},
+    plan:[{label:"每份（需提供要求与素材）",price:"20 元/份"}]},
   { id:"plan-report", cat:"报告", name:"公司级规划报告", icon:"🏢",
     desc:"公司级战略/发展规划报告编制。需充分沟通需求方向后制作。",
-    plan:[{label:"每份",price:"40 元/份"}]},
+    plan:[{label:"每份（需沟通需求方向）",price:"40 元/份"}]},
   { id:"industry-report", cat:"报告", name:"行业及形势分析报告", icon:"📈",
     desc:"行业现状、市场形势与趋势分析报告，辅助经营与投资决策。",
     plan:[{label:"每份",price:"50 元/份"}]},
