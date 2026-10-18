@@ -1,0 +1,6 @@
+node_modules/
+server/data/db.json
+*.log
+.temp/
+auto-push.config.json
+auto-push-state.json
