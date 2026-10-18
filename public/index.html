@@ -870,13 +870,13 @@ function openSvc(i){
   $("svcBody").innerHTML = `
     <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:14px">${s.desc}</div>
     <ul style="list-style:none;margin-bottom:14px">${plan}</ul>
-    <div class="notice" style="display:block;margin-bottom:16px;background:#fff8ec;border-color:#ffd9a8;color:#7a4a00">📞 如需使用该服务，请联系客服沟通需求后人工安排。</div>
+    <div class="notice" style="display:block;margin-bottom:16px;background:#fff8ec;border-color:#ffd9a8;color:#7a4a00">📞 如需使用该服务，请联系客服<b>19117676222</b>，沟通需求后人工安排。</div>
     <div class="pay-actions"><button class="btn pay-submit" onclick="svcContact()">📞 联系客服咨询</button>
     <button class="btn btn-ghost" style="width:100%;margin-top:10px" onclick="closeSvc()">关闭</button></div>`;
   $("svcModal").classList.add("open");
 }
 function svcContact(){
-  alert("如需使用该增值服务，请联系客服：\n（请在后台配置您的客服联系方式）");
+  alert("如需使用该增值服务，请联系客服：\n📞 电话：19117676222\n\n（电话 / 微信沟通需求后人工安排）");
 }
 function closeSvc(){ $("svcModal").classList.remove("open"); }
 $("svcClose").onclick = closeSvc;
